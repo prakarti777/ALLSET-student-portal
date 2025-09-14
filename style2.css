@@ -1,0 +1,168 @@
+    :root{
+      --yellow: #f59e0b;
+      ;
+        --bg:#0b0b0b; 
+        --card:#0f0f0f;
+         --muted:#cfcfcf; 
+         --radius:14px;
+    }
+    *
+    {box-sizing:border-box}
+
+    html,body{height:100%;
+        margin:0;
+        font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
+        background:var(--bg);
+        color:#fff
+    }
+    a{
+        color:inherit}
+       .container{width:min(1100px,94%);
+        margin:0 auto;
+        padding:28px 0
+    }
+
+    header{
+        padding:14px 0;
+        border-bottom:1px solid #141414
+    }
+
+    .brand{
+        display:flex;
+        align-items:center;
+        gap:12px
+    }
+
+    .value{
+        font-size: 52px;
+        font-weight: 800;
+        color: var(--yellow);
+    }
+
+    .brand-mark{
+        width:44px;
+        height:44px;
+        border-radius:10px; 
+         background:var(--yellow); 
+        display:grid;
+        place-items:center;
+        color:#141414;
+        font-weight:800
+    }
+
+    .hero{
+        display:grid;
+        grid-template-columns:1fr 420px;
+        gap:24px;
+        align-items:center;
+        padding:36px 0
+    }
+    .hero h1{
+        font-size:28px;
+        margin:0
+    }
+    .hero p{
+        color:var(--muted);
+        margin-top:8px
+    }
+    .card{
+        background:var(--card);
+        border:1px solid #202020;
+        padding:18px;
+        border-radius:var(--radius);
+        box-shadow:0 8px 24px rgba(0,0,0,.4)
+    }
+
+    /* Counselling form */
+    .form-row{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);gap:12px
+    }
+    label{
+        display:block;
+        font-size:13px;
+        color:var(--muted);
+        margin-bottom:6px
+    }
+    input,select,textarea{
+        width:100%;
+        padding:10px;
+        border-radius:10px;
+        border:1px solid #222;
+        background:#0b0b0b;
+        color:#fff
+    }
+    textarea{
+        resize:vertical
+    }
+    .btn{display:inline-flex;
+        align-items:center;
+        gap:10px;
+        padding:10px 14px;
+        border-radius:999px;
+        border:2px solid transparent;
+        font-weight:700;
+        cursor:pointer
+    }
+    .btn-primary{
+        background:var(--yellow);
+        color:#000
+    }
+    .btn-ghost{
+        background:transparent;
+        border-color:#242424
+    }
+
+    .profile-list{
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:14px
+    }
+
+    .profile{
+        padding:14px;
+        border-radius:12px;
+        background:#0e0e0e;
+        border:1px solid #232323
+    }
+    .avatar{
+        width:64px;
+        height:64px;
+        border-radius:12px;
+        background:#151515;
+        display:grid;
+        place-items:center;
+        font-weight:800;
+        color:var(--yellow);
+        font-size:18px
+    }
+    .meta{margin-left:12px}
+
+    .profile-head{display:flex;align-items:center}
+
+    .profile h4{margin:6px 0 0}
+
+    .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:#151515;border:1px solid #252525;font-size:12px}
+
+    /* Scheduler */
+    .slots{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+
+    .slot{padding:8px 10px;border-radius:10px;border:1px dashed #2a2a2a;background:transparent;cursor:pointer}
+
+    .slot.selected{background:var(--yellow);color:#000;border-style:solid}
+
+    /* FAQ */
+    .faq details{background:#0e0e0e;border:1px solid #232323;padding:12px;border-radius:10px}
+    
+    summary{font-weight:700;cursor:pointer}
+
+    footer{margin-top:30px;padding:18px 0;border-top:1px solid #121212;color:var(--muted);font-size:13px}
+
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .profile-list{grid-template-columns:repeat(2,1fr)}
+      .form-row{grid-template-columns:1fr}
+    }
+    @media (max-width:600px){
+      .profile-list{grid-template-columns:1fr}
+    }

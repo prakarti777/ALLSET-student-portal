@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PCB - Private Sector</title>
+  <style>
+    :root {
+      --yellow: #f59e0b;
+      --white: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--white);
+      background: url("https://img.freepik.com/premium-vector/colorful-abstract-background_688032-23.jpg?w=740") no-repeat center center/cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.65);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.8);
+      color: var(--yellow);
+      text-align: center;
+      padding: 25px 0;
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .intro {
+      text-align: center;
+      padding: 60px 30px 30px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .intro h2 {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+      color: var(--yellow);
+    }
+    .intro p {
+      font-size: 1rem;
+      color: #ddd;
+      line-height: 1.6;
+      margin: 6px 0;
+    }
+
+    .cards-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px 40px 60px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: rgba(26, 26, 26, 0.9);
+      border-radius: 10px;
+      width: 260px;
+      overflow: hidden;
+      text-decoration: none;
+      color: var(--white);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.8);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-content {
+      padding: 16px;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin: 0 0 10px;
+      color: var(--yellow);
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      margin: 0;
+      color: #ccc;
+    }
+
+    .back-link {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .back-link a {
+      text-decoration: none;
+      color: var(--yellow);
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.2s;
+    }
+    .back-link a:hover {
+      color: var(--white);
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <header>ALLSET</header>
+
+    <div class="intro">
+      <h2>Private Sector After PCB</h2>
+      <p>PCB students can also find great career opportunities in private hospitals, laboratories, pharmaceutical industries, and biotech companies.</p>
+    </div>
+
+    <div class="cards-container">
+
+      <div class="card">
+        <img src="https://img.freepik.com/free-photo/doctors-meeting-hospital_23-2147896162.jpg" alt="Hospitals">
+        <div class="card-content">
+          <h3>Private Hospitals</h3>
+          <p>Work as doctors, nurses, physiotherapists, or lab technicians in reputed hospitals.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://img.freepik.com/free-photo/pharmaceutical-production_23-2147896138.jpg" alt="Pharma">
+        <div class="card-content">
+          <h3>Pharmaceutical Companies</h3>
+          <p>Jobs in drug manufacturing, sales, quality control, and R&D departments.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://img.freepik.com/free-photo/lab-research_23-2147896096.jpg" alt="Labs">
+        <div class="card-content">
+          <h3>Research Labs</h3>
+          <p>Opportunities in biotechnology, microbiology, and genetics labs for research roles.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://img.freepik.com/free-photo/scientist-biotechnology_23-2147896105.jpg" alt="Biotech">
+        <div class="card-content">
+          <h3>Biotech Firms</h3>
+          <p>Work in genetic engineering, agriculture biotech, and food technology companies.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://img.freepik.com/free-photo/healthcare-team-discussion_23-2147896115.jpg" alt="Healthcare">
+        <div class="card-content">
+          <h3>Healthcare Management</h3>
+          <p>Roles in hospital administration, medical coding, and health data management.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="back-link">
+      <a href="pcb.html">&larr; Back to PCB Main Page</a>
+    </div>
+  </div>
+</body>
+</html>

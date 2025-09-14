@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ALLSET - Scholarship Portal</title>
+  <style>
+    :root { 
+      --yellow: #f59e0b;
+      --black: #0b0b0b;
+      --gray-900: #111111;
+      --gray-700: #2a2a2a;
+      --white: #ffffff;
+      --radius: 8px;
+      --shadow: 0 5px 15px rgba(0,0,0,.2);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--black);
+      color: var(--white);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1000px, 95%); margin: 0 auto; padding-bottom: 40px; }
+
+    header {
+      background: var(--black);
+      text-align: center;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--gray-700);
+    }
+
+    .brand {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--yellow);
+    }
+
+    h1 {
+      font-size: 36px;
+      margin: 10px 0 20px;
+      color: var(--white);
+    }
+
+    .description {
+      text-align: center;
+      color: var(--white);
+      max-width: 800px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+    }
+
+    .filters {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+
+    .filters select {
+      background: var(--gray-900);
+      border: 1px solid var(--gray-700);
+      border-radius: var(--radius);
+      padding: 8px 12px;
+      color: var(--white);
+      font-size: 1em;
+    }
+
+    .scholarship-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .card {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .card h3 {
+      color: var(--yellow);
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      margin: 6px 0;
+      color: var(--white);
+      font-size: 14px;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 10px;
+      background: var(--yellow);
+      color: var(--black);
+      padding: 8px 14px;
+      border-radius: var(--radius);
+      font-weight: 700;
+      transition: background 0.2s ease;
+    }
+
+    .card a:hover {
+      background: #d48806;
+    }
+
+    @media (max-width: 680px) {
+      .filters { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">ALLSET</div>
+    <h1>Scholarship Portal</h1>
+  </header>
+
+  <div class="container">
+
+    <div class="description">
+      Welcome to the ALLSET Scholarship Portal! Here you can find a variety of scholarship opportunities for students from different streams and backgrounds. Explore scholarships based on your stream, category, and type to support your education and career ambitions.
+    </div>
+
+  <div class="container">
+
+    <div class="filters">
+      <select id="streamFilter">
+        <option value="all">Select Stream</option>
+        <option value="pcm">PCM</option>
+        <option value="pcb">PCB</option>
+        <option value="commerce">Commerce</option>
+        <option value="arts">Arts</option>
+        <option value="vocational">Vocational</option>
+        <option value="general">All Streams</option>
+      </select>
+
+      <select id="categoryFilter">
+        <option value="all">Select Category</option>
+        <option value="general">General</option>
+        <option value="sc">SC</option>
+        <option value="st">ST</option>
+        <option value="obc">OBC</option>
+        <option value="minority">Minority</option>
+      </select>
+
+      <select id="typeFilter">
+        <option value="all">Select Type</option>
+        <option value="postmatric">Post Matric</option>
+        <option value="merit">Merit-based</option>
+        <option value="need">Need-based</option>
+        <option value="technical">Technical</option>
+        <option value="research">Research</option>
+        <option value="sports">Sports</option>
+        <option value="overseas">Overseas</option>
+      </select>
+    </div>
+
+   <div class="scholarship-list" id="scholarshipList">
+
+  <!-- Scholarship 1 -->
+  <div class="card" data-stream="general" data-category="general" data-type="merit">
+    <h3>Central Sector Scheme of Scholarship</h3>
+    <p>This scholarship supports students with outstanding academic records by helping with tuition and other educational expenses. It encourages continued higher education.</p>
+    <p><strong>Eligibility:</strong> Students with ≥80% marks, family income ≤₹8 Lakh</p>
+    <p><strong>Benefits:</strong> ₹12,000/year UG; ₹20,000/year PG</p>
+    <p><strong>Deadline:</strong> October 31, 2025</p>
+    <a href="https://www.education.gov.in/en/scholarships-education-loan-0" target="_blank">Apply Now</a>
+  </div>
+
+  <!-- Scholarship 2 -->
+  <div class="card" data-stream="general" data-category="general" data-type="merit">
+    <h3>Reliance Foundation Undergraduate Scholarships</h3>
+    <p>This scholarship is aimed at undergraduate students across disciplines, offering financial aid to pursue their higher education. It fosters talent from diverse backgrounds.</p>
+    <p><strong>Eligibility:</strong> Undergraduate students from any discipline</p>
+    <p><strong>Benefits:</strong> Up to ₹2 lakh</p>
+    <p><strong>Deadline:</strong> Check website</p>
+    <a href="https://www.scholarships.reliancefoundation.org/UG_Scholarship.aspx" target="_blank">Apply Now</a>
+  </div>
+
+  <!-- Scholarship 3 -->
+  <div class="card" data-stream="general" data-category="general" data-type="overseas">
+    <h3>ICCR Scholarships</h3>
+    <p>The ICCR Scholarship program invites international students to study in India for undergraduate or postgraduate degrees. It covers tuition and living expenses.</p>
+    <p><strong>Eligibility:</strong> International students for UG/PG studies in India</p>
+    <p><strong>Benefits:</strong> Full tuition, accommodation, living expenses</p>
+    <p><strong>Deadline:</strong> Varies by country</p>
+    <a href="https://a2ascholarships.iccr.gov.in/" target="_blank">Apply Now</a>
+  </div>
+
+  <!-- Scholarship 4 -->
+  <div class="card" data-stream="general" data-category="sc" data-type="overseas">
+    <h3>National Overseas Scholarship Scheme</h3>
+    <p>This scheme empowers SC, ST, and OBC students to pursue postgraduate studies abroad. It aims to build leadership and expertise among underrepresented communities.</p>
+    <p><strong>Eligibility:</strong> SC/ST/OBC students, first-class degree</p>
+    <p><strong>Benefits:</strong> Up to ₹12.81 lakh/year</p>
+    <p><strong>Deadline:</strong> Check website</p>
+    <a href="https://www.gyandhan.com/scholarships/national-overseas-scholarship-eligiblity-benefits-deadline" target="_blank">Apply Now</a>
+  </div>
+
+  <!-- Scholarship 5 -->
+  <div class="card" data-stream="technical" data-category="general" data-type="need">
+    <h3>Swami Dayanand Scholarship Program</h3>
+    <p>This program assists financially disadvantaged students pursuing engineering or medical degrees. It ensures they have access to quality education and support services.</p>
+    <p><strong>Eligibility:</strong> Underprivileged students pursuing engineering/medical degrees</p>
+    <p><strong>Benefits:</strong> Tuition and academic support</p>
+    <p><strong>Deadline:</strong> Check website</p>
+    <a href="https://www.swamidayanand.org/scholarship-india" target="_blank">Apply Now</a>
+  </div>
+
+  <!-- Scholarship 6 -->
+  <div class="card" data-stream="general" data-category="general" data-type="postmatric">
+    <h3>Bihar Post-Matric Scholarship</h3>
+    <p>This scholarship supports students from Bihar after matriculation, helping them cover tuition and maintenance expenses. It promotes educational growth in the state.</p>
+    <p><strong>Eligibility:</strong> Students from Bihar pursuing post-matric education</p>
+    <p><strong>Benefits:</strong> Tuition and maintenance expenses</p>
+    <p><strong>Deadline:</strong> Check website</p>
+    <a href="https://timesofindia.indiatimes.com/education/news/bihar-post-matric-scholarship-2025-registration-begins-at-pmsonline-bihar-gov-in-check-direct-link-and-deadline-here/articleshow/123497100.cms" target="_blank">Apply Now</a>
+  </div>
+
+  <!-- Scholarship 7 -->
+  <div class="card" data-stream="general" data-category="general" data-type="postmatric">
+    <h3>PM Special Scholarship (J&K, Ladakh)</h3>
+    <p>This scholarship helps students from Jammu & Kashmir and Ladakh access higher education by providing tuition and academic expense support. It aims to enhance opportunities in remote regions.</p>
+    <p><strong>Eligibility:</strong> Students from Jammu & Kashmir or Ladakh</p>
+    <p><strong>Benefits:</strong> Tuition and academic expenses support</p>
+    <p><strong>Deadline:</strong> October 31, 2025</p>
+    <a href="https://scholarships.gov.in/" target="_blank">Apply Now</a>
+  </div>
+
+  <!-- Scholarship 8 -->
+  <div class="card" data-stream="arts" data-category="general" data-type="merit">
+    <h3>Chevening Karnataka Scholarship</h3>
+    <p>Targeting women graduates from Karnataka, this scholarship offers fully funded master’s programs in the UK. It promotes leadership and global educational exposure.</p>
+    <p><strong>Eligibility:</strong> Women graduates from Karnataka</p>
+    <p><strong>Benefits:</strong> Fully funded master's in the UK</p>
+    <p><strong>Deadline:</strong> October 7, 2025</p>
+    <a href="https://timesofindia.indiatimes.com/city/bengaluru/chevening-karnataka-scholarship-five-women-selected-for-first-batch/articleshow/123172019.cms" target="_blank">Apply Now</a>
+  </div>
+
+  <!-- Scholarship 9 -->
+  <div class="card" data-stream="medical" data-category="general" data-type="merit">
+    <h3>Dr. Moopen’s Legacy Scholarship</h3>
+    <p>This scholarship provides full tuition support for students in medical-related courses in Wayanad, helping them focus on studies without financial stress.</p>
+    <p><strong>Eligibility:</strong> Students in MBBS/BSc Nursing/BPharm courses in Wayanad</p>
+    <p><strong>Benefits:</strong> 100% tuition fee waiver</p>
+    <p><strong>Deadline:</strong> Check website</p>
+    <a href="https://timesofindia.indiatimes.com/city/kochi/dr-moopen-announces-annual-scholarship-programme/articleshow/122959997.cms" target="_blank">Apply Now</a>
+  </div>
+
+  <!-- Scholarship 10 -->
+  <div class="card" data-stream="engineering" data-category="general" data-type="merit">
+    <h3>IET India Scholarship Award</h3>
+    <p>The IET India Scholarship Award provides financial support and recognition to engineering students across India. It helps them pursue academic excellence.</p>
+    <p><strong>Eligibility:</strong> Engineering students across India</p>
+    <p><strong>Benefits:</strong> Financial assistance and recognition</p>
+    <p><strong>Deadline:</strong> June 22, 2025</p>
+    <a href="https://timesofindia.indiatimes.com/city/pune/applications-invited-for-iet-india-scholarships/articleshow/121712779.cms" target="_blank">Apply Now</a>
+  </div>
+
+  <!-- Scholarship 11 -->
+  <div class="card" data-stream="general" data-category="general" data-type="research">
+    <h3>UGC NET 2025</h3>
+    <p>This exam-based scholarship supports candidates qualifying for research and teaching positions across India. It promotes academic rigor and research excellence.</p>
+    <p><strong>Eligibility:</strong> Candidates qualifying for Assistant Professor or JRF</p>
+    <p><strong>Benefits:</strong> Teaching and research positions eligibility</p>
+    <p><strong>Deadline:</strong> Check website</p>
+    <a href="https://timesofindia.indiatimes.com/education/news/ugc-net-2025-certificates-released-at-ugcnet-nta-ac-in-check-direct-link-to-download-here/articleshow/123866963.cms" target="_blank">Apply Now</a>
+  </div>
+
+  <!-- Scholarship 12 -->
+  <div class="card" data-stream="general" data-category="general" data-type="overseas">
+    <h3>GREAT Scholarships India</h3>
+    <p>These scholarships help Indian students pursue postgraduate studies in the UK, covering tuition and other essential expenses. It strengthens global academic ties.</p>
+    <p><strong>Eligibility:</strong> Indian students pursuing postgraduate studies in the UK</p>
+    <p><strong>Benefits:</strong> Scholarships for 2025-26</p>
+    <p><strong>Deadline:</strong> Check website</p>
+    <a href="https://www.y-axis.com/scholarship/indian-government-scholarships-study-abroad/" target="_blank">Apply Now</a>
+  </div>
+
+  <!-- Scholarship 13 -->
+  <div class="card" data-stream="general" data-category="general" data-type="overseas">
+    <h3>Fulbright-Nehru Master's Fellowship</h3>
+    <p>This prestigious fellowship enables Indian professionals to pursue master’s studies in the US, covering tuition, airfare, and living expenses for global exposure.</p>
+    <p><strong>Eligibility:</strong> Indian professionals pursuing master’s in the US</p>
+    <p><strong>Benefits:</strong> Tuition, living expenses, airfare support</p>
+    <p><strong>Deadline:</strong> Check website</p>
+    <a href="https://www.y-axis.com/scholarship/indian-government-scholarships-study-abroad/" target="_blank">Apply Now</a>
+  </div>
+
+  <!-- Scholarship 14 -->
+  <div class="card" data-stream="general" data-category="general" data-type="overseas">
+    <h3>Inlaks Shivdasani Scholarships</h3>
+    <p>The Inlaks Shivdasani Scholarships support Indian students pursuing postgraduate studies abroad, helping cover tuition and living expenses to advance their careers.</p>
+    <p><strong>Eligibility:</strong> Indian students for postgraduate abroad</p>
+    <p><strong>Benefits:</strong> Up to USD 100,000 tuition & expenses</p>
+    <p><strong>Deadline:</strong> Check website</p>
+    <a href="https://www.y-axis.com/scholarship/indian-government-scholarships-study-abroad/" target="_blank">Apply Now</a>
+  </div>
+
+  <!-- Scholarship 15 -->
+  <div class="card" data-stream="general" data-category="general" data-type="overseas">
+    <h3>Oxford and Cambridge Society of India (OCSI)</h3>
+    <p>This scholarship helps Indian students pursue postgraduate studies at Oxford and Cambridge, covering tuition and living expenses to enhance educational opportunities.</p>
+    <p><strong>Eligibility:</strong> Indian students for postgraduate at Oxford/Cambridge</p>
+    <p><strong>Benefits:</strong> Tuition and living expenses support</p>
+    <p><strong>Deadline:</strong> Check website</p>
+    <a href="https://www.y-axis.com/scholarship/indian-government-scholarships-study-abroad/" target="_blank">Apply Now</a>
+  </div>
+   <div class="back-link">
+      <a href="selectstream.html">&larr; Back to Stream Page</a>
+    </div>
+</div>
+
+
+  <script>
+    const streamFilter = document.getElementById('streamFilter');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const typeFilter = document.getElementById('typeFilter');
+    const scholarships = document.querySelectorAll('.scholarship-list .card');
+
+    function filterScholarships() {
+      const stream = streamFilter.value;
+      const category = categoryFilter.value;
+      const type = typeFilter.value;
+
+      scholarships.forEach(card => {
+        const matchesStream = stream === 'all' || card.dataset.stream === stream;
+        const matchesCategory = category === 'all' || card.dataset.category === category;
+        const matchesType = type === 'all' || card.dataset.type === type;
+
+        card.style.display = (matchesStream && matchesCategory && matchesType) ? 'block' : 'none';
+      });
+    }
+
+    streamFilter.addEventListener('change', filterScholarships);
+    categoryFilter.addEventListener('change', filterScholarships);
+    typeFilter.addEventListener('change', filterScholarships);
+  </script>
+
+</body>
+</html>

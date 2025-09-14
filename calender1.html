@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ALLSET - Exam Calendar</title>
+<style>
+:root { 
+  --yellow: #f59e0b;
+  --black: #0b0b0b;
+  --gray-500: #8a8a8a;
+  --white: #ffffff;
+  --radius: 8px;
+  --shadow: 0 3px 10px rgba(0,0,0,.2);
+  --green: #4CAF50;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--black);
+  color: var(--white);
+}
+
+header { text-align: center; margin: 20px 0; }
+header h1 { font-size: 28px; margin: 0; color: var(--yellow); }
+
+.container { width: min(1400px, 95%); margin: 0 auto; padding: 10px 0; }
+
+.calendar-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 boxes per row */
+  gap: 15px;
+}
+
+.calendar-month {
+  background: #1a1a1a;
+  border-radius: var(--radius);
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  height: 220px; /* small square */
+  font-size: 0.75rem;
+}
+
+.month-title {
+  text-align: center;
+  color: var(--yellow);
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.month-content {
+  display: flex;
+  flex: 1;
+  gap: 6px;
+}
+
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  width: 70%; /* calendar portion */
+}
+
+.day {
+  text-align: center;
+  padding: 3px 0;
+  color: white;
+  font-size: 10px;
+}
+
+.exam-date {
+  background: var(--green);
+  color: white;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  cursor: pointer;
+}
+
+.exam-list {
+  width: 30%; /* exam list portion */
+  font-size: 10px;
+  padding-left: 4px;
+  border-left: 1px solid #f59e0b;
+  list-style: disc;
+  color: var(--white);
+  overflow-y: auto;
+  max-height: 100%;
+}
+.calendar-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 months in a row */
+    gap: 15px;
+    margin: 20px;
+  }
+
+  .calendar-month {
+    border: 1px solid #f59e0b;
+    border-radius: 8px;
+    padding: 8px;
+    font-family: Arial, sans-serif;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    height: 300px; /* fixed height to keep all boxes uniform */
+    overflow: hidden;
+  }
+
+  .month-title {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+
+  .month-content {
+    display: flex;
+    flex: 1;
+    gap: 5px;
+  }
+
+  .days-grid {
+    flex: 7;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 days in a week */
+    gap: 2px;
+    font-size: 10px;
+    overflow: hidden;
+  }
+
+  .day {
+    text-align: center;
+    padding: 2px 0;
+    border-radius: 50%;
+  }
+
+  .exam-date {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+  }
+
+  .exam-list {
+    flex: 3;
+    font-size: 10px;
+    padding-left: 5px;
+    overflow-y: auto;
+  }
+
+  .exam-list li {
+    margin-bottom: 2px;
+  }
+</style>
+</head>
+<body>
+
+<header style="text-align:center; padding:20px 0; background:#0b0b0b; border-bottom:1px solid #333;">
+  <div style="font-size:28px; font-weight:800; color:#f59e0b;">ALLSET</div>
+  <h1 style="font-size:32px; margin:10px 0; color:#ffffff;">Government Exam Date Calendar</h1>
+  <p style="font-size:14px; color:#cfcfcf; max-width:600px; margin:0 auto;">
+    Track all major government exam dates for the next year. Quickly check entrance exams, scholarships, and admission timelines month-wise.
+  </p>
+   <div class="back-link" >
+      <a href="selectstream.html" style="color: white;">&larr; Back to Stream Page</a>
+    </div>
+</header>
+
+
+
+<div class="container">
+  <div class="calendar-container">
+   
+    <!-- September 2025 -->
+    <div class="calendar-month">
+      <div class="month-title">September 2025</div>
+      <div class="month-content">
+        <div class="days-grid">
+         <div class="day">1</div>
+        <div class="day">2</div>
+        <div class="day exam-date" title="UPSC Prelims">3</div>
+        <div class="day">4</div>
+        <div class="day">5</div>
+        <div class="day exam-date" title="State CET">6</div>
+        <div class="day">7</div>
+        <div class="day">8</div>
+        <div class="day">9</div>
+        <div class="day">10</div>
+        <div class="day exam-date" title="SSC CHSL">11</div>
+        <div class="day">12</div>
+        <div class="day">13</div>
+        <div class="day">14</div>
+        <div class="day">15</div>
+        <div class="day">16</div>
+        <div class="day">17</div>
+        <div class="day exam-date" title="JEE Advanced">18</div>
+        <div class="day">19</div>
+        <div class="day">20</div>
+        <div class="day">21</div>
+        <div class="day">22</div>
+        <div class="day">23</div>
+        <div class="day exam-date" title="NEET UG">24</div>
+        <div class="day">25</div>
+        <div class="day">26</div>
+        <div class="day">27</div>
+        <div class="day">28</div>
+        <div class="day">29</div>
+        <div class="day">30</div>
+        </div>
+        <ul class="exam-list">
+           <li>UPSC Prelims – 3 Sep 2025</li>
+        <li>State CET – 6 Sep 2025</li>
+        <li>SSC CHSL – 11 Sep 2025</li>
+        <li>JEE Advanced – 18 Sep 2025</li>
+        <li>NEET UG – 24 Sep 2025</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- October 2025 -->
+    <!-- October 2025 -->
+<div class="calendar-month">
+  <div class="month-title">October 2025</div>
+  <div class="month-content">
+    <div class="days-grid">
+      <div class="day">1</div>
+      <div class="day">2</div>
+      <div class="day exam-date" title="JEE Main">3</div>
+      <div class="day">4</div>
+      <div class="day">5</div>
+      <div class="day exam-date" title="NEET UG">6</div>
+      <div class="day">7</div>
+      <div class="day exam-date" title="KVPY">8</div>
+      <div class="day">9</div>
+      <div class="day">10</div>
+      <div class="day exam-date" title="UPSC Prelims Application Ends">11</div>
+      <div class="day">12</div>
+      <div class="day">13</div>
+      <div class="day exam-date" title="IBPS Clerk Prelims">14</div>
+      <div class="day">15</div>
+      <div class="day">16</div>
+      <div class="day">17</div>
+      <div class="day exam-date" title="RBI Grade B Phase 1">18</div>
+      <div class="day">19</div>
+      <div class="day exam-date" title="JEE Main 2nd Session">20</div>
+      <div class="day">21</div>
+      <div class="day">22</div>
+      <div class="day exam-date" title="NEET UG Result">23</div>
+      <div class="day">24</div>
+      <div class="day">25</div>
+      <div class="day exam-date" title="SSC CHSL Application Ends">26</div>
+      <div class="day">27</div>
+      <div class="day">28</div>
+      <div class="day">29</div>
+      <div class="day">30</div>
+      <div class="day">31</div>
+    </div>
+    <ul class="exam-list">
+      <li>JEE Main - Oct 3</li>
+      <li>NEET UG - Oct 6</li>
+      <li>KVPY - Oct 8</li>
+      <li>UPSC Prelims Application Ends - Oct 11</li>
+      <li>IBPS Clerk Prelims - Oct 14</li>
+      <li>RBI Grade B Phase 1 - Oct 18</li>
+      <li>JEE Main 2nd Session - Oct 20</li>
+      <li>NEET UG Result - Oct 23</li>
+      <li>SSC CHSL Oct 26</li>
+    </ul>
+  </div>
+</div>
+
+<!-- November 2025 -->
+<div class="calendar-month">
+  <div class="month-title">November 2025</div>
+  <div class="month-content">
+    <div class="days-grid">
+      <div class="day">1</div>
+      <div class="day exam-date" title="CLAT">2</div>
+      <div class="day">3</div>
+      <div class="day">4</div>
+      <div class="day exam-date" title="BPSC Exam">15</div>
+      <div class="day">5</div>
+      <div class="day">6</div>
+      <div class="day">7</div>
+      <div class="day">8</div>
+      <div class="day exam-date" title="SSC CPO Exam">9</div>
+      <div class="day">10</div>
+      <div class="day">11</div>
+      <div class="day exam-date" title="GATE Registration Ends">12</div>
+      <div class="day">13</div>
+      <div class="day">14</div>
+      <div class="day">16</div>
+      <div class="day">17</div>
+      <div class="day">18</div>
+      <div class="day exam-date" title="AIIMS MBBS Exam">19</div>
+      <div class="day">20</div>
+      <div class="day">21</div>
+      <div class="day">22</div>
+      <div class="day">23</div>
+      <div class="day">24</div>
+      <div class="day exam-date" title="RBI Assistant Exam">25</div>
+      <div class="day">26</div>
+      <div class="day">27</div>
+      <div class="day">28</div>
+      <div class="day">29</div>
+      <div class="day">30</div>
+    </div>
+    <ul class="exam-list">
+      <li>CLAT - Nov 2</li>
+      <li>BPSC Exam - Nov 15</li>
+      <li>SSC CPO Exam - Nov 9</li>
+      <li>GATE Registration Ends - Nov 12</li>
+      <li>AIIMS MBBS Exam - Nov 19</li>
+      <li>RBI Assistant Exam - Nov 25</li>
+    </ul>
+  </div>
+</div>
+
+<!-- December 2025 -->
+<div class="calendar-month">
+  <div class="month-title">December 2025</div>
+  <div class="month-content">
+    <div class="days-grid">
+      <div class="day exam-date" title="JEE Advanced">1</div>
+      <div class="day">2</div>
+      <div class="day">3</div>
+      <div class="day">4</div>
+      <div class="day">5</div>
+      <div class="day exam-date" title="NEET UG Application Ends">6</div>
+      <div class="day">7</div>
+      <div class="day">8</div>
+      <div class="day">9</div>
+      <div class="day exam-date" title="SSC CGL Tier 1">10</div>
+      <div class="day">11</div>
+      <div class="day">12</div>
+      <div class="day">13</div>
+      <div class="day exam-date" title="IBPS PO Prelims">14</div>
+      <div class="day">15</div>
+      <div class="day">16</div>
+      <div class="day">17</div>
+      <div class="day exam-date" title="UPSC NDA Exam">18</div>
+      <div class="day">19</div>
+      <div class="day">20</div>
+      <div class="day">21</div>
+      <div class="day">22</div>
+      <div class="day exam-date" title="AIIMS PG Exam">23</div>
+      <div class="day">24</div>
+      <div class="day">25</div>
+      <div class="day">26</div>
+      <div class="day">27</div>
+      <div class="day exam-date" title="RBI Grade B Phase 2">28</div>
+      <div class="day">29</div>
+      <div class="day">30</div>
+      <div class="day">31</div>
+    </div>
+    <ul class="exam-list">
+      <li>JEE Advanced - Dec 1</li>
+      <li>NEET UG Application Ends - Dec 6</li>
+      <li>SSC CGL Tier 1 - Dec 10</li>
+      <li>IBPS PO Prelims - Dec 14</li>
+      <li>UPSC NDA Exam - Dec 18</li>
+      <li>AIIMS PG Exam - Dec 23</li>
+      <li>RBI Grade B Phase 2 - Dec 28</li>
+    </ul>
+  </div>
+</div>
+
+
+    <!-- February 2026 -->
+<div class="calendar-month">
+  <div class="month-title">February 2026</div>
+  <div class="month-content">
+    <div class="days-grid">
+      <div class="day">1</div>
+      <div class="day exam-date" title="NDA">2</div>
+      <div class="day">3</div>
+      <div class="day">4</div>
+      <div class="day exam-date" title="BPSC Exam">5</div>
+      <div class="day">6</div>
+      <div class="day">7</div>
+      <div class="day exam-date" title="SSC MTS">8</div>
+      <div class="day">9</div>
+      <div class="day">10</div>
+      <div class="day exam-date" title="IBPS Clerk Mains">11</div>
+      <div class="day">12</div>
+      <div class="day">13</div>
+      <div class="day">14</div>
+      <div class="day exam-date" title="State PSC">15</div>
+      <div class="day">16</div>
+      <div class="day">17</div>
+      <div class="day exam-date" title="JEE Advanced Registration Starts">18</div>
+      <div class="day">19</div>
+      <div class="day">20</div>
+      <div class="day">21</div>
+      <div class="day exam-date" title="AIIMS PG Application Starts">22</div>
+      <div class="day">23</div>
+      <div class="day">24</div>
+      <div class="day">25</div>
+      <div class="day">26</div>
+      <div class="day">27</div>
+      <div class="day exam-date" title="SSC CHSL Exam">28</div>
+    </div>
+    <ul class="exam-list">
+      <li>NDA - Feb 2</li>
+      <li>BPSC Exam - Feb 5</li>
+      <li>SSC MTS - Feb 8</li>
+      <li>IBPS Clerk Mains - Feb 11</li>
+      <li>State PSC - Feb 15</li>
+      <li>JEE Advanced Registration Starts - Feb 18</li>
+      <li>AIIMS PG Application Starts - Feb 22</li>
+      <li>SSC CHSL Exam - Feb 28</li>
+    </ul>
+  </div>
+</div>
+
+<!-- March 2026 -->
+<div class="calendar-month">
+  <div class="month-title">March 2026</div>
+  <div class="month-content">
+    <div class="days-grid">
+      <div class="day">1</div>
+      <div class="day">2</div>
+      <div class="day exam-date" title="UPSC Prelims">3</div>
+      <div class="day">4</div>
+      <div class="day exam-date" title="JEE Advanced">5</div>
+      <div class="day">6</div>
+      <div class="day">7</div>
+      <div class="day exam-date" title="NEET UG">8</div>
+      <div class="day">9</div>
+      <div class="day">10</div>
+      <div class="day exam-date" title="SSC CGL Tier 1">11</div>
+      <div class="day">12</div>
+      <div class="day">13</div>
+      <div class="day exam-date" title="IBPS PO Mains">14</div>
+      <div class="day">15</div>
+      <div class="day">16</div>
+      <div class="day exam-date" title="AIIMS PG">17</div>
+      <div class="day">18</div>
+      <div class="day">19</div>
+      <div class="day exam-date" title="RBI Grade B Phase 1">20</div>
+      <div class="day">21</div>
+      <div class="day">22</div>
+      <div class="day">23</div>
+      <div class="day exam-date" title="State PSC">24</div>
+      <div class="day">25</div>
+      <div class="day">26</div>
+      <div class="day exam-date" title="JEE Advanced Result">27</div>
+      <div class="day">28</div>
+      <div class="day">29</div>
+      <div class="day">30</div>
+      <div class="day">31</div>
+    </div>
+    <ul class="exam-list">
+      <li>UPSC Prelims - Mar 3</li>
+      <li>JEE Advanced - Mar 5</li>
+      <li>NEET UG - Mar 8</li>
+      <li>SSC CGL Tier 1 - Mar 11</li>
+      <li>IBPS PO Mains - Mar 14</li>
+      <li>AIIMS PG - Mar 17</li>
+      <li>RBI Grade B Phase 1 - Mar 20</li>
+      <li>State PSC - Mar 24</li>
+      <li>JEE Advanced Result - Mar 27</li>
+    </ul>
+  </div>
+</div>
+
+<!-- April 2026 -->
+<div class="calendar-month">
+  <div class="month-title">April 2026</div>
+  <div class="month-content">
+    <div class="days-grid">
+      <div class="day">1</div>
+      <div class="day exam-date" title="AIIMS MBBS">2</div>
+      <div class="day">3</div>
+      <div class="day">4</div>
+      <div class="day exam-date" title="SSC CHSL Tier 1">5</div>
+      <div class="day">6</div>
+      <div class="day">7</div>
+      <div class="day exam-date" title="JEE Main">8</div>
+      <div class="day">9</div>
+      <div class="day">10</div>
+      <div class="day exam-date" title="UPSC NDA II">11</div>
+      <div class="day">12</div>
+      <div class="day">13</div>
+      <div class="day exam-date" title="IBPS Clerk Prelims">14</div>
+      <div class="day">15</div>
+      <div class="day">16</div>
+      <div class="day exam-date" title="NEET UG">17</div>
+      <div class="day">18</div>
+      <div class="day">19</div>
+      <div class="day exam-date" title="SSC CGL Tier 2">20</div>
+      <div class="day">21</div>
+      <div class="day">22</div>
+      <div class="day exam-date" title="RBI Assistant">23</div>
+      <div class="day">24</div>
+      <div class="day">25</div>
+      <div class="day exam-date" title="JEE Main Result">26</div>
+      <div class="day">27</div>
+      <div class="day">28</div>
+      <div class="day">29</div>
+      <div class="day">30</div>
+    </div>
+    <ul class="exam-list">
+      <li>AIIMS MBBS - Apr 2</li>
+      <li>SSC CHSL Tier 1 - Apr 5</li>
+      <li>JEE Main - Apr 8</li>
+      <li>UPSC NDA II - Apr 11</li>
+      <li>IBPS Clerk Prelims - Apr 14</li>
+      <li>NEET UG - Apr 17</li>
+      <li>SSC CGL Tier 2 - Apr 20</li>
+      <li>RBI Assistant - Apr 23</li>
+      <li>JEE Main Result - Apr 26</li>
+    </ul>
+  </div>
+</div>
+
+
+   <!-- May 2026 -->
+<div class="calendar-month">
+  <div class="month-title">May 2026</div>
+  <div class="month-content">
+    <div class="days-grid">
+      <div class="day exam-date" title="JEE Main">1</div>
+      <div class="day">2</div>
+      <div class="day">3</div>
+      <div class="day">4</div>
+      <div class="day">5</div>
+      <div class="day exam-date" title="NEET UG">6</div>
+      <div class="day">7</div>
+      <div class="day">8</div>
+      <div class="day exam-date" title="SSC MTS Result">9</div>
+      <div class="day">10</div>
+      <div class="day">11</div>
+      <div class="day exam-date" title="IBPS PO Prelims">12</div>
+      <div class="day">13</div>
+      <div class="day">14</div>
+      <div class="day exam-date" title="NEET UG">15</div>
+      <div class="day">16</div>
+      <div class="day">17</div>
+      <div class="day">18</div>
+      <div class="day exam-date" title="State PSC">19</div>
+      <div class="day">20</div>
+      <div class="day">21</div>
+      <div class="day exam-date" title="SSC CGL Tier 1">22</div>
+      <div class="day">23</div>
+      <div class="day">24</div>
+      <div class="day">25</div>
+      <div class="day exam-date" title="RBI Grade B">26</div>
+      <div class="day">27</div>
+      <div class="day">28</div>
+      <div class="day exam-date" title="JEE Main Result">29</div>
+      <div class="day">30</div>
+      <div class="day">31</div>
+    </div>
+    <ul class="exam-list">
+      <li>JEE Main - May 1</li>
+      <li>NEET UG - May 6</li>
+      <li>SSC MTS Result - May 9</li>
+      <li>IBPS PO Prelims - May 12</li>
+      <li>NEET UG - May 15</li>
+      <li>State PSC - May 19</li>
+      <li>SSC CGL Tier 1 - May 22</li>
+      <li>RBI Grade B - May 26</li>
+      <li>JEE Main Result - May 29</li>
+    </ul>
+  </div>
+</div>
+
+<!-- June 2026 -->
+<div class="calendar-month">
+  <div class="month-title">June 2026</div>
+  <div class="month-content" style="display:flex; gap:10px;">
+    <div class="days-grid"  style="flex:0 0 70%; display:grid; grid-template-columns:repeat(7, 1fr); gap:2px;">
+      <div class="day">1</div>
+      <div class="day exam-date" title="State PSC">2</div>
+      <div class="day">3</div>
+      <div class="day">4</div>
+      <div class="day exam-date" title="JEE Advanced Registration">5</div>
+      <div class="day">6</div>
+      <div class="day">7</div>
+      <div class="day exam-date" title="AIIMS MBBS Registration">8</div>
+      <div class="day">9</div>
+      <div class="day">10</div>
+      <div class="day exam-date" title="SSC CGL Tier 2">11</div>
+      <div class="day">12</div>
+      <div class="day">13</div>
+      <div class="day exam-date" title="IBPS Clerk Mains">14</div>
+      <div class="day">15</div>
+      <div class="day">16</div>
+      <div class="day exam-date" title="NEET UG Result">17</div>
+      <div class="day">18</div>
+      <div class="day">19</div>
+      <div class="day exam-date" title="RBI Assistant">20</div>
+      <div class="day">21</div>
+      <div class="day">22</div>
+      <div class="day exam-date" title="SSC CHSL Tier 2">23</div>
+      <div class="day">24</div>
+      <div class="day">25</div>
+      <div class="day exam-date" title="State PSC Result">26</div>
+      <div class="day">27</div>
+      <div class="day">28</div>
+      <div class="day exam-date" title="JEE Advanced">29</div>
+      <div class="day">30</div>
+    </div>
+    <ul class="exam-list" style="flex:0 0 30%; padding-left:5px; font-size:12px; overflow:hidden;">
+      <li>State PSC - Jun 2</li>
+      <li>JEE Advanced Registration - Jun 5</li>
+      <li>AIIMS MBBS Registration - Jun 8</li>
+      <li>SSC CGL Tier 2 - Jun 11</li>
+      <li>IBPS Clerk Mains - Jun 14</li>
+      <li>NEET UG Result - Jun 17</li>
+      <li>RBI Assistant - Jun 20</li>
+      <li>SSC CHSL Tier 2 - Jun 23</li>
+      <li>State PSC Result - Jun 26</li>
+      <li>JEE Advanced - Jun 29</li>
+    </ul>
+  </div>
+</div>
+
+<!-- July 2026 -->
+<div class="calendar-month">
+  <div class="month-title">July 2026</div>
+  <div class="month-content" style="display:flex; gap:10px;">
+    <div class="days-grid"  style="flex:0 0 70%; display:grid; grid-template-columns:repeat(7, 1fr); gap:2px;">
+      <div class="day exam-date" title="SSC CGL">1</div>
+      <div class="day">2</div>
+      <div class="day">3</div>
+      <div class="day exam-date" title="IBPS PO Result">4</div>
+      <div class="day">5</div>
+      <div class="day">6</div>
+      <div class="day exam-date" title="JEE Advanced Result">7</div>
+      <div class="day">8</div>
+      <div class="day">9</div>
+      <div class="day exam-date" title="NEET UG Counselling">10</div>
+      <div class="day">11</div>
+      <div class="day">12</div>
+      <div class="day exam-date" title="State PSC Exam">13</div>
+      <div class="day">14</div>
+      <div class="day">15</div>
+      <div class="day exam-date" title="AIIMS PG Exam">16</div>
+      <div class="day">17</div>
+      <div class="day">18</div>
+      <div class="day exam-date" title="SSC CHSL Result">19</div>
+      <div class="day">20</div>
+      <div class="day">21</div>
+      <div class="day exam-date" title="RBI Grade B Result">22</div>
+      <div class="day">23</div>
+      <div class="day">24</div>
+      <div class="day exam-date" title="JEE Main Counselling">25</div>
+      <div class="day">26</div>
+      <div class="day">27</div>
+      <div class="day exam-date" title="IBPS Clerk Result">28</div>
+      <div class="day">29</div>
+      <div class="day">30</div>
+      <div class="day exam-date" title="SSC MTS Result">31</div>
+    </div>
+    <ul class="exam-list" style="flex:0 0 30%; padding-left:5px; font-size:12px; overflow:hidden;">
+      <li>SSC CGL - Jul 1</li>
+      <li>IBPS PO Result - Jul 4</li>
+      <li>JEE Advanced Result - Jul 7</li>
+      <li>NEET UG Counselling - Jul 10</li>
+      <li>State PSC Exam - Jul 13</li>
+      <li>AIIMS PG Exam - Jul 16</li>
+      <li>SSC CHSL Result - Jul 19</li>
+      <li>RBI Grade B Result - Jul 22</li>
+      <li>JEE Main Counselling - Jul 25</li>
+      <li>IBPS Clerk Result - Jul 28</li>
+      <li>SSC MTS Result - Jul 31</li>
+    </ul>
+  </div>
+</div>
+
+<!-- August 2026 -->
+<div class="calendar-month">
+  <div class="month-title">August 2026</div>
+  <div class="month-content" style="display:flex; gap:10px;">
+    <div class="days-grid"  style="flex:0 0 70%; display:grid; grid-template-columns:repeat(7, 1fr); gap:2px;">
+      <div class="day exam-date" title="JEE Advanced">1</div>
+      <div class="day">2</div>
+      <div class="day">3</div>
+      <div class="day exam-date" title="NEET UG Counselling">4</div>
+      <div class="day">5</div>
+      <div class="day">6</div>
+      <div class="day exam-date" title="SSC CGL Tier 1">7</div>
+      <div class="day">8</div>
+      <div class="day">9</div>
+      <div class="day exam-date" title="IBPS PO Mains">10</div>
+      <div class="day">11</div>
+      <div class="day">12</div>
+      <div class="day exam-date" title="AIIMS PG Result">13</div>
+      <div class="day">14</div>
+      <div class="day">15</div>
+      <div class="day exam-date" title="SSC CHSL Tier 2">16</div>
+      <div class="day">17</div>
+      <div class="day">18</div>
+      <div class="day exam-date" title="JEE Main Result">19</div>
+      <div class="day">20</div>
+      <div class="day">21</div>
+      <div class="day exam-date" title="State PSC Result">22</div>
+      <div class="day">23</div>
+      <div class="day">24</div>
+      <div class="day exam-date" title="RBI Assistant">25</div>
+      <div class="day">26</div>
+      <div class="day">27</div>
+      <div class="day exam-date" title="IBPS Clerk Mains">28</div>
+      <div class="day">29</div>
+      <div class="day">30</div>
+      <div class="day exam-date" title="SSC MTS">31</div>
+    </div>
+    <ul class="exam-list" style="flex:0 0 30%; padding-left:5px; font-size:12px; overflow:hidden;">
+      <li>JEE Advanced - Aug 1</li>
+      <li>NEET UG Counselling - Aug 4</li>
+      <li>SSC CGL Tier 1 - Aug 7</li>
+      <li>IBPS PO Mains - Aug 10</li>
+      <li>AIIMS PG Result - Aug 13</li>
+      <li>SSC CHSL Tier 2 - Aug 16</li>
+      <li>JEE Main Result - Aug 19</li>
+      <li>State PSC Result - Aug 22</li>
+      <li>RBI Assistant - Aug 25</li>
+      <li>IBPS Clerk Mains - Aug 28</li>
+      <li>SSC MTS - Aug 31</li>
+    </ul>
+  </div>
+  
+</div>
+
+  </div>
+  
+</div>
+
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALLSET - Courses After 12th</title>
+  <style>
+    :root {
+      --yellow: #f59e0b;
+      --white: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--white);
+      background: url("https://www.creativefabrica.com/wp-content/uploads/2023/05/11/Modern-colourful-abstract-background-Graphics-69439498-1.jpg") no-repeat center center/cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.65);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.8);
+      color: var(--yellow);
+      text-align: center;
+      padding: 25px 0;
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .section-heading {
+      text-align: center;
+      padding: 40px 20px 20px;
+      font-size: 2.2rem;
+      color: var(--yellow);
+    }
+
+    .category {
+      width: 100%;
+      padding: 20px 40px 60px;
+    }
+
+    .category h2 {
+      font-size: 1.8rem;
+      color: var(--yellow);
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--yellow);
+      padding-bottom: 5px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .card-link {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .card {
+      background: rgba(26, 26, 26, 0.9);
+      border-radius: 10px;
+      width: 260px;
+      overflow: hidden;
+      padding: 20px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.8);
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: var(--yellow);
+      text-align: center;
+      min-height: 2.6em;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #ccc;
+      text-align: center;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    .back-link {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .back-link a {
+      text-decoration: none;
+      color: var(--yellow);
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.2s;
+    }
+    .back-link a:hover {
+      color: var(--white);
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <header>ALLSET</header>
+
+    <h1 class="section-heading">Courses You Can Apply Next</h1>
+
+    <!--ARTS Core courses-->
+    <div class="category">
+  <h2>Arts Core Courses</h2>
+  <div class="container">
+    <a href="b.a.(general).html" class="card-link">
+      <div class="card">
+        <h3>B.A (General)</h3>
+        <p>Covers foundational subjects in humanities, social sciences, and liberal arts.</p>
+      </div>
+    </a>
+    <a href="b.a.(honours).html" class="card-link">
+      <div class="card">
+        <h3>B.A (Hons.)</h3>
+        <p>Provides specialization in subjects like English, History, Political Science, Psychology, etc.</p>
+      </div>
+    </a>
+    <a href="bfa.html" class="card-link">
+      <div class="card">
+        <h3>BFA</h3>
+        <p>Focuses on fine arts including painting, sculpture, applied arts, and visual communication.</p>
+      </div>
+    </a>
+    <a href="bpa.html" class="card-link">
+      <div class="card">
+        <h3>BPA</h3>
+        <p>Centers on performing arts such as music, dance, drama, and theatre studies.</p>
+      </div>
+    </a>
+    <a href="bsw.html" class="card-link">
+      <div class="card">
+        <h3>BSW</h3>
+        <p>Bachelor of Social Work program that builds knowledge in community service and social welfare.</p>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- Law & Legal Studies -->
+<div class="category">
+  <h2>Law & Legal Studies</h2>
+  <div class="container">
+    <div class="card">
+      <h3>BA LLB</h3>
+      <p>Five-year integrated program combining arts and law for careers in advocacy, judiciary, and legal practice.</p>
+    </div>
+    <div class="card">
+      <h3>BBA LLB</h3>
+      <p>Blends management studies with legal training, designed for careers in corporate and business law.</p>
+    </div>
+    <div class="card">
+      <h3>B.Com LLB</h3>
+      <p>Integrates commerce and law, focusing on taxation, corporate governance, and financial legal services.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Social Sciences & Humanities -->
+<div class="category">
+  <h2>Social Sciences & Humanities</h2>
+  <div class="container">
+    <div class="card">
+      <h3>BA Psychology</h3>
+      <p>Explores human behavior, mental processes, and counseling for careers in therapy, HR, and research.</p>
+    </div>
+    <div class="card">
+      <h3>BA Sociology</h3>
+      <p>Studies society, culture, and institutions, leading to careers in social work, NGOs, and policy research.</p>
+    </div>
+    <div class="card">
+      <h3>BA Political Science</h3>
+      <p>Focuses on governance, political systems, and international relations, ideal for UPSC and public service exams.</p>
+    </div>
+    <div class="card">
+      <h3>BSW</h3>
+      <p>Bachelor of Social Work preparing students for community service, welfare programs, and development sectors.</p>
+    </div>
+    <div class="card">
+      <h3>BA History</h3>
+      <p>Explores world and Indian history with careers in teaching, archaeology, museums, and civil services.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Media, Literature & Communication -->
+<div class="category">
+  <h2>Media, Literature & Communication</h2>
+  <div class="container">
+    <div class="card">
+      <h3>BA English Literature</h3>
+      <p>Studies classic and modern literature, preparing for writing, teaching, and research-based careers.</p>
+    </div>
+    <div class="card">
+      <h3>BJMC</h3>
+      <p>Bachelor of Journalism and Mass Communication, focusing on print, broadcast, and digital media.</p>
+    </div>
+    <div class="card">
+      <h3>Bachelor in Foreign Languages</h3>
+      <p>Specialization in French, German, Spanish, or other languages for translation, diplomacy, and international careers.</p>
+    </div>
+    <div class="card">
+      <h3>BA Philosophy</h3>
+      <p>Engages with ethics, logic, and critical thinking, opening pathways to academia, law, and public policy.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Creative & Cultural Studies -->
+<div class="category">
+  <h2>Creative & Cultural Studies</h2>
+  <div class="container">
+    <div class="card">
+      <h3>B.Des</h3>
+      <p>Bachelor of Design focusing on fashion, product, and graphic design for creative industries.</p>
+    </div>
+    <div class="card">
+      <h3>BHM</h3>
+      <p>Bachelor of Hotel Management offering careers in hospitality, tourism, and event management.</p>
+    </div>
+    <div class="card">
+      <h3>BA Performing Arts</h3>
+      <p>Music, dance, and theatre focused program for careers in stage performance and cultural management.</p>
+    </div>
+    <div class="card">
+      <h3>BA Fine Arts</h3>
+      <p>Specialized in drawing, sculpture, and visual creativity with scope in galleries, museums, and design.</p>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Other Specialized Options (Arts) -->
+<div class="category">
+  <h2>Other Specialized Options</h2>
+  <div class="container">
+    <div class="card">
+      <h3>BA Psychology</h3>
+      <p>Focuses on human behavior, mental health, and counseling for careers in therapy, HR, and research.</p>
+    </div>
+    <div class="card">
+      <h3>BA Sociology</h3>
+      <p>Studies society, culture, and social change for roles in NGOs, policy, and community development.</p>
+    </div>
+    <div class="card">
+      <h3>BA Philosophy</h3>
+      <p>Covers ethics, logic, and critical thinking, useful for law, civil services, and academics.</p>
+    </div>
+    <div class="card">
+      <h3>Foreign Languages</h3>
+      <p>Courses in French, German, Spanish, and more for global careers in translation, teaching, and diplomacy.</p>
+    </div>
+  </div>
+</div>
+
+
+    <div class="back-link">
+      <a href="arts.html">&larr; Back to select page</a>
+    </div>
+  </div>
+</body>
+</html>

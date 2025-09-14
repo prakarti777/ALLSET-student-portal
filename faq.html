@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALLSET - FAQ</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #0b0b0b;
+      color: #fff;
+    }
+
+    .container {
+      width: min(1000px, 95%);
+      margin: 0 auto;
+      padding: 40px 0;
+    }
+
+    header {
+      text-align: center;
+      color: #f59e0b;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+     h2 {
+      text-align: center;
+      color: #f59e0b;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    p.description {
+      text-align: center;
+      color: #ccc;
+      margin-bottom: 40px;
+      font-size: 16px;
+    }
+
+    .faq-item {
+      border: 1px solid #333;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      background: #1a1a1a;
+    }
+
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 15px 20px;
+      font-size: 16px;
+      font-weight: 600;
+      background: #222;
+      color: #f59e0b;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .faq-question:hover {
+      background: #333;
+    }
+
+    .faq-answer {
+      padding: 15px 20px;
+      display: none;
+      font-size: 14px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+   
+  <div class="container">
+    <header><b>ALLSET</b></header>
+    <h2>Frequently Asked Questions</h2>
+    <p class="description">Find answers to common queries about scholarships, exams, streams, and more.</p>
+     
+      
+    
+    <!-- FAQ Items -->
+    <div class="faq-item">
+      <button class="faq-question">1. How to apply for scholarships?</button>
+      <div class="faq-answer">
+        <p>Visit the scholarship page, check eligibility, and click 'Apply Now'. Fill the required details and submit before the deadline.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">2. Which exams are best for commerce students?</button>
+      <div class="faq-answer">
+        <p>Commerce students can appear for CA Foundation, CPT, CS, BBA/BCom entrance exams, and applicable national scholarships.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">3. Can I apply for multiple scholarships?</button>
+      <div class="faq-answer">
+        <p>Yes, as long as you meet the eligibility criteria for each scholarship. Check deadlines to avoid overlaps.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">4. How do I know the eligibility for exams?</button>
+      <div class="faq-answer">
+        <p>Eligibility criteria are mentioned on the respective exam or scholarship page. Read instructions carefully before applying.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">5. Are there scholarships for vocational courses?</button>
+      <div class="faq-answer">
+        <p>Yes, there are scholarships for ITI, diploma, and other skill-based programs. Check the vocational scholarships section.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">6. What is the deadline to apply for central scholarships?</button>
+      <div class="faq-answer">
+        <p>Deadlines vary for each scholarship. Always check the scholarship card or official site for accurate dates.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">7. How do I get notified about upcoming exams?</button>
+      <div class="faq-answer">
+        <p>You can subscribe to notifications on our site or check the Exam Calendar section regularly for updates.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">8. Can I apply for exams and scholarships simultaneously?</button>
+      <div class="faq-answer">
+        <p>Yes, but manage deadlines carefully. Some scholarships require exam marks as eligibility criteria.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">9. Do I need to pay any fee for scholarships?</button>
+      <div class="faq-answer">
+        <p>Most scholarships are free to apply. Some may require application fees, which will be clearly mentioned on the official site.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">10. How to contact support if I face issues?</button>
+      <div class="faq-answer">
+        <p>You can reach out via the contact form on the website or email our support team for assistance with scholarships or exams.</p>
+      </div>
+    </div>
+    <div class="back-link">
+      <a href="selectstream.html" style="color: white;">&larr; Back to Stream Page</a>
+    </div>
+  </div>
+ 
+  <script>
+    const faqButtons = document.querySelectorAll('.faq-question');
+    faqButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const answer = btn.nextElementSibling;
+
+        // Toggle visibility
+        const isOpen = answer.style.display === 'block';
+        faqButtons.forEach(b => b.nextElementSibling.style.display = 'none'); // Close others
+        answer.style.display = isOpen ? 'none' : 'block';
+
+        // Smooth scroll to the answer
+        if (!isOpen) {
+          answer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

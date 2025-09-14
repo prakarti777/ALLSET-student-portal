@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Free Counselling — Vocational Courses</title>
+  <meta name="description" content="Book free career counselling for vocational courses after 10th & 12th. Guidance, assessments, and personalised plans." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand" role="banner">
+        <div class="value" aria-hidden="true">AllSET</div>
+        <div>
+          <div style="font-weight:800">Career guidance</div>
+          <div style="font-size:13px;color:var(--muted)">Free career counselling</div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <h1>Book a free counselling session</h1>
+          <p>Tailored guidance for jobs and courses after 10th and 12th — choose a counsellor, pick a time, and get a personalised pathway.</p>
+
+          <div class="card" aria-labelledby="form-heading">
+            <h3 id="form-heading" style="margin-top:0">Request Counselling</h3>
+            <form id="counsel-form" class="" autocomplete="off">
+              <div class="form-row">
+                <div>
+                  <label for="name">Full name</label>
+                  <input id="name" name="name" required placeholder="Your full name" />
+                </div>
+                <div>
+                  <label for="phone">Phone</label>
+                  <input id="phone" name="phone" required placeholder="10-digit mobile" />
+                </div>
+                <div>
+                  <label for="email">Email (optional)</label>
+                  <input id="email" name="email" type="email" placeholder="you@example.com" />
+                </div>
+                <div>
+                  <label for="education">Education level</label>
+                  <select id="education" name="education">
+                    <option>After 10th</option>
+                    <option>After 12th</option>
+                    <option>Looking to upskill</option>
+                  </select>
+                </div>
+              </div>
+
+              <label for="interest">Interested area</label>
+              <select id="interest" name="interest">
+                <option>IT & Computer</option>
+                <option>Healthcare</option>
+                <option>Hospitality</option>
+                <option>Beauty & Wellness</option>
+                <option>Design & Media</option>
+                <option>Electrical & Electronics</option>
+              </select>
+
+              <label for="msg" style="margin-top:10px">Short message (optional)</label>
+              <textarea id="msg" name="message" rows="3" placeholder="Tell us about your goals"></textarea>
+
+              <div style="margin-top:12px;display:flex;gap:10px;align-items:center">
+                <button class="btn btn-primary" type="submit">Request Session</button>
+                <button class="btn btn-ghost" type="button" id="resetBtn">Reset</button>
+                <div style="margin-left:auto;color:var(--muted);font-size:13px">Sessions are free — 30 mins</div>
+              </div>
+            </form>
+          </div>
+
+          <div style="margin-top:16px;color:var(--muted);font-size:13px">Tip: choose a counsellor below for specialised guidance.</div>
+        </div>
+
+        <aside>
+          <div class="card">
+            <h3 style="margin-top:0">Choose a counsellor</h3>
+            <div class="profile-list" role="list">
+              <div class="profile" role="listitem" tabindex="0" data-name="Ayesha Khan" data-expert="After 10th pathways, IT & Design">
+                <div class="profile-head">
+                  <div class="avatar" aria-hidden="true">AK</div>
+                  <div class="meta">
+                    <h4 style="margin:0">Ayesha Khan</h4>
+                    <div style="color:var(--muted);font-size:13px">10+ yrs career counselling</div>
+                  </div>
+                </div>
+                <p style="color:var(--muted);margin-top:8px">Expert in early-skills planning and vocational pathways.</p>
+                <div style="margin-top:10px;display:flex;gap:8px;align-items:center">
+                  <button class="btn btn-primary select-btn" type="button">Select</button>
+                  <div class="tag">Available</div>
+                </div>
+              </div>
+
+              <div class="profile" role="listitem" tabindex="0" data-name="Rohit Kumar" data-expert="Healthcare, Technical trades">
+                <div class="profile-head">
+                  <div class="avatar" aria-hidden="true">RK</div>
+                  <div class="meta">
+                    <h4 style="margin:0">Rohit Kumar</h4>
+                    <div style="color:var(--muted);font-size:13px">Counsellor & industry liaison</div>
+                  </div>
+                </div>
+                <p style="color:var(--muted);margin-top:8px">Focuses on apprenticeships and job-readiness.</p>
+                <div style="margin-top:10px;display:flex;gap:8px;align-items:center">
+                  <button class="btn btn-primary select-btn" type="button">Select</button>
+                  <div class="tag">Available</div>
+                </div>
+                </div>
+            </section>
+          <div class="back-link">
+      <a href="selectstream.html">&larr; Back to Stream Page</a>
+    </div>
+</main>
+
+
+<footer>
+© 2025 Counselling. For urgent help call: 1800-XXX-XXXX
+</footer>
+</div>
+
+
+<script>
+// Basic interactivity: select counsellor, choose slot, book session
+let selectedCounsellor = null;
+const selectBtns = document.querySelectorAll('.select-btn');
+selectBtns.forEach(btn => btn.addEventListener('click', (e)=>{
+const profile = e.target.closest('.profile');
+document.querySelectorAll('.profile').forEach(p=>p.style.borderColor='#232323');
+profile.style.borderColor='var(--yellow)';
+selectedCounsellor = profile.dataset.name;
+}));
+
+
+// slots
+const slots = document.querySelectorAll('.slot');
+slots.forEach(s => s.addEventListener('click', ()=>{
+slots.forEach(x=>x.classList.remove('selected'));
+s.classList.add('selected');
+}));
+
+
+// form submit
+document.getElementById('counsel-form').addEventListener('submit', (ev)=>{
+ev.preventDefault();
+const name = document.getElementById('name').value.trim();
+if(!name){ alert('Please enter your name'); return }
+const slot = document.querySelector('.slot.selected');
+if(!selectedCounsellor){ alert('Please select a counsellor'); return }
+if(!slot){ alert('Please pick a slot'); return }
+alert('Booked: '+selectedCounsellor+' — '+slot.textContent+'\nWe will contact you soon.');
+ev.target.reset();
+document.querySelectorAll('.slot').forEach(x=>x.classList.remove('selected'));
+document.querySelectorAll('.profile').forEach(p=>p.style.borderColor='#232323');
+selectedCounsellor = null;
+});
+
+
+document.getElementById('resetBtn').addEventListener('click', ()=>{
+document.getElementById('counsel-form').reset();
+});
+
+
+document.getElementById('bookBtn').addEventListener('click', ()=>{
+document.getElementById('counsel-form').dispatchEvent(new Event('submit', {cancelable:true}));
+});
+
+
+document.getElementById('demoBtn').addEventListener('click', ()=>{
+alert('Thanks! A counsellor will call you within 1 business day.');
+});
+</script>
+
+</body>
+</html>

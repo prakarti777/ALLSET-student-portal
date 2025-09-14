@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALLSET - Courses After 12th</title>
+  <style>
+    :root {
+      --yellow: #f59e0b;
+      --white: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--white);
+      background: url("https://www.creativefabrica.com/wp-content/uploads/2023/05/11/Modern-colourful-abstract-background-Graphics-69439498-1.jpg") no-repeat center center/cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.65);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.8);
+      color: var(--yellow);
+      text-align: center;
+      padding: 25px 0;
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .section-heading {
+      text-align: center;
+      padding: 40px 20px 20px;
+      font-size: 2.2rem;
+      color: var(--yellow);
+    }
+
+    .category {
+      width: 100%;
+      padding: 20px 40px 60px;
+    }
+
+    .category h2 {
+      font-size: 1.8rem;
+      color: var(--yellow);
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--yellow);
+      padding-bottom: 5px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .card-link {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .card {
+      background: rgba(26, 26, 26, 0.9);
+      border-radius: 10px;
+      width: 260px;
+      overflow: hidden;
+      padding: 20px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.8);
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: var(--yellow);
+      text-align: center;
+      min-height: 2.6em;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #ccc;
+      text-align: center;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    .back-link {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .back-link a {
+      text-decoration: none;
+      color: var(--yellow);
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.2s;
+    }
+    .back-link a:hover {
+      color: var(--white);
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <header>ALLSET</header>
+
+    <h1 class="section-heading">Courses You Can Apply Next</h1>
+
+    <!-- Commerce Core Courses -->
+    <div class="category">
+      <h2>Commerce Core Courses</h2>
+      <div class="container">
+        <a href="bcom.html" class="card-link">
+          <div class="card">
+            <h3>B.Com (General)</h3>
+            <p>Provides a foundation in commerce, covering accounts, finance and management basics.</p>
+          </div>
+        </a>
+        <a href="bcomhonors.html" class="card-link">
+          <div class="card">
+            <h3>B.Com (Hons.)</h3>
+            <p>Focuses on advanced accounting, taxation and finance for specialized commerce careers.</p>
+          </div>
+        </a>
+        <a href="bba.html" class="card-link">
+          <div class="card">
+            <h3>BBA</h3>
+            <p>Builds skills in management, marketing, finance, HR, and entrepreneurship leadership.</p>
+          </div>
+        </a>
+        <a href="bms.html" class="card-link">
+          <div class="card">
+            <h3>BMS</h3>
+            <p>Develops managerial and business strategy skills with practical decision-making focus.</p>
+          </div>
+        </a>
+        <div class="card">
+          <h3>BBE</h3>
+          <p>Combines economics with commerce, focusing on markets, data analysis and policies.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Finance & Professional Fields -->
+    <div class="category">
+      <h2>Finance & Professional Fields</h2>
+      <div class="container">
+        <div class="card">
+          <h3>CA</h3>
+          <p>Professional course in accounting, auditing, taxation and corporate financial practices.</p>
+        </div>
+        <div class="card">
+          <h3>CS</h3>
+          <p>Specializes in company law, corporate governance and compliance for organizations.</p>
+        </div>
+        <div class="card">
+          <h3>CMA</h3>
+          <p>Focuses on cost control, auditing, budgeting and corporate financial management.</p>
+        </div>
+        <div class="card">
+          <h3>CFA</h3>
+          <p>Global certification for finance, investment banking, equity research and analysis.</p>
+        </div>
+        <div class="card">
+          <h3>BBI</h3>
+          <p>Introduces banking, insurance operations, risk management and financial products.</p>
+        </div>
+        <div class="card">
+          <h3>BFIA</h3>
+          <p>Prepares students in investment analysis, financial markets and corporate finance.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Law & Legal Studies -->
+    <div class="category">
+      <h2>Law & Legal Studies</h2>
+      <div class="container">
+        <div class="card">
+          <h3>BA LLB</h3>
+          <p>Five-year integrated program combining arts and law for careers in legal practice.</p>
+        </div>
+        <div class="card">
+          <h3>BBA LLB</h3>
+          <p>Blends business management with legal studies for careers in corporate law fields.</p>
+        </div>
+        <div class="card">
+          <h3>B.Com LLB</h3>
+          <p>Commerce plus law program designed for tax, financial and corporate legal roles.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- IT & Computer Fields -->
+    <div class="category">
+      <h2>IT & Computer Fields</h2>
+      <div class="container">
+        <div class="card">
+          <h3>BCA</h3>
+          <p>Focuses on programming, software development, web technologies and IT systems.</p>
+        </div>
+        <div class="card">
+          <h3>B.Sc. Computer Science</h3>
+          <p>Provides knowledge of algorithms, programming, software engineering and AI.</p>
+        </div>
+        <div class="card">
+          <h3>B.Sc. IT</h3>
+          <p>Concentrates on databases, networking, cloud, data management and IT security.</p>
+        </div>
+        <div class="card">
+          <h3>Diploma IT</h3>
+          <p>Short-term program in basic software, website development and IT applications.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Economics & Social Science -->
+    <div class="category">
+      <h2>Economics & Social Science</h2>
+      <div class="container">
+        <div class="card">
+          <h3>BA Economics</h3>
+          <p>Studies microeconomics, macroeconomics, statistics and data-driven decision making.</p>
+        </div>
+        <div class="card">
+          <h3>BA Social Sciences</h3>
+          <p>Explores sociology, psychology and political science for research and policy careers.</p>
+        </div>
+        <div class="card">
+          <h3>Bachelor of Statistics</h3>
+          <p>Mathematics and statistics focused program for analytics, data science and research.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Creative & Media Fields -->
+    <div class="category">
+      <h2>Creative & Media Fields</h2>
+      <div class="container">
+        <div class="card">
+          <h3>BJMC</h3>
+          <p>Journalism and mass communication program preparing for careers in media industry.</p>
+        </div>
+        <div class="card">
+          <h3>BHM</h3>
+          <p>Hospitality management course focusing on hotel, tourism and service operations.</p>
+        </div>
+        <div class="card">
+          <h3>BFA</h3>
+          <p>Fine arts degree covering painting, sculpture, design and creative visual practices.</p>
+        </div>
+        <div class="card">
+          <h3>B.Des</h3>
+          <p>Design program focusing on creativity, product design, fashion and visual design.</p>
+        </div>
+        <div class="card">
+          <h3>BA Performing Arts</h3>
+          <p>Music, dance and theatre based program for careers in performance and culture.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Other Specialized Options -->
+    <div class="category">
+      <h2>Other Specialized Options</h2>
+      <div class="container">
+        <div class="card">
+          <h3>BTTM</h3>
+          <p>Travel and tourism management program for hospitality, airlines and tourism jobs.</p>
+        </div>
+        <div class="card">
+          <h3>Event Management</h3>
+          <p>Program focused on planning, organizing, and managing corporate and social events.</p>
+        </div>
+        <div class="card">
+          <h3>International Business</h3>
+          <p>Global business degree covering import, export, trade policies and markets.</p>
+        </div>
+        <div class="card">
+          <h3>Foreign Languages</h3>
+          <p>Courses in French, German, Spanish and more for global careers and translation.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="back-link">
+      <a href="commerce.html">&larr; Back to select page</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ALLSET - Stream Selection</title>
+<style>
+  :root{
+    --black:#0b0b0b;
+    --muted-black:#111;
+    --yellow:#f59e0b;
+    --white:#ffffff;
+    --card-bg:#f7f7f7;
+    --text:#222;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;background:var(--white);color:var(--text);-webkit-font-smoothing:antialiased}
+  /* NAV */
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;padding:16px 48px;background:var(--black);color:var(--white);
+  }
+  .brand{font-weight:800;color:var(--yellow);font-size:1.25rem}
+  .nav-links{display:flex;gap:20px;align-items:center;color:#ddd}
+  .cta{background:var(--yellow);color:var(--black);padding:8px 14px;border-radius:6px;font-weight:700;cursor:pointer}
+
+  /* HERO area: left black box + right white image box */
+  .hero-wrap{position:relative;overflow:visible}
+  .hero{
+    display:grid;
+    grid-template-columns: 1fr 520px; /* fixed column for right image box */
+    gap:30px;
+    align-items:center;
+    padding:56px 48px 24px;
+    background:linear-gradient(180deg,var(--muted-black),var(--muted-black)); /* solid black look */
+    color:var(--white);
+  }
+
+  /* LEFT panel inside hero */
+  .hero-left{
+    padding:20px 30px 36px 0;
+    max-width:760px;
+  }
+  .hero-left h1{
+    font-size:48px;
+    line-height:1.02;
+    margin:0 0 18px;
+    font-weight:800;
+  }
+  .hero-left h1 .accent{color:var(--yellow)}
+  .hero-left p{color:#d9d9d9;font-size:16px;margin:0 0 18px;max-width:70%}
+  .hero-actions{display:flex;gap:12px;margin:18px 0}
+  .btn-primary{background:var(--yellow);color:var(--black);padding:12px 18px;border-radius:8px;border:0;font-weight:700;cursor:pointer}
+  .btn-outline{background:transparent;color:#fff;padding:12px 18px;border-radius:8px;border:2px solid rgba(255,255,255,0.14);font-weight:700;cursor:pointer}
+
+  /* stats row under the hero-left content */
+  .stats{display:flex;gap:34px;margin-top:26px;align-items:flex-end}
+  .stat{min-width:110px}
+  .stat .num{font-size:20px;font-weight:800;color:var(--yellow);margin-bottom:6px}
+  .stat .label{color:#d6d6d6;font-size:14px}
+
+  /* RIGHT white image card */
+  .hero-right{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:22px;
+  }
+  .image-card{
+    background:var(--white);
+    width:100%;
+    height:340px; /* controls hero image height */
+    box-shadow:0 18px 36px rgba(0,0,0,0.28);
+    border-radius:6px;
+    overflow:hidden;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .image-card img{width:100%;height:100%;object-fit:cover;display:block}
+
+  /* black bar under hero */
+  .hero-bar{
+    height:56px;
+    width:60%;
+    background:var(--muted-black);
+    margin-left:48px;
+    transform: translateY(-18px);
+    border-radius:2px;
+  }
+
+  /* Streams / team section below + left text + right 4 boxes */
+  .streams-section{
+    background:var(--white);
+    padding:60px 48px;
+    display:grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap:36px;
+    align-items:center;
+  }
+  .streams-text h2{font-size:36px;margin:0 0 14px}
+  .streams-text p{color:#444;margin:0 0 10px;line-height:1.6}
+
+  /* 4 boxes on right — use your stream data here */
+  .streams-grid{
+    display:flex;
+    gap:18px;
+    justify-content:flex-end;
+    align-items:stretch;
+  }
+  .stream-box{
+    background:var(--yellow);
+    color:var(--black);
+    width:180px;
+    min-height:160px;
+    border-radius:6px;
+    padding:16px;
+    box-shadow:0 8px 18px rgba(93, 90, 90, 0.12);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    text-decoration:none;
+  }
+  .stream-box h3{margin:0 0 8px;font-size:18px}
+  .stream-box p{margin:0;font-size:0.92rem;line-height:1.25;color:#222}
+
+  /* responsive */
+  @media (max-width:1100px){
+    .hero{grid-template-columns:1fr 420px;padding:40px}
+    .image-card{height:300px}
+    .hero-left p{max-width:100%}
+  }
+  @media (max-width:860px){
+    .hero{grid-template-columns:1fr;padding:30px;row-gap:16px}
+    .hero-right{order:2}
+    .hero-left{order:1}
+    .hero-right .image-card{height:260px}
+    .hero-bar{width:80%;margin-left:30px;transform:translateY(-28px)}
+    .streams-section{grid-template-columns:1fr;gap:28px}
+    .streams-grid{justify-content:space-between;flex-wrap:wrap}
+    .stream-box{width:48%;min-height:140px}
+  }
+  @media (max-width:480px){
+    .stream-box{width:100%}
+    .image-card{height:200px}
+    .hero-left h1{font-size:28px}
+  }
+  /* Hover effect for stream boxes */
+.stream-box {
+  background: var(--yellow);
+  color: var(--black);
+  width: 180px;
+  min-height: 160px;
+  border-radius: 6px;
+  padding: 16px;
+  box-shadow: 0 8px 18px rgba(93, 90, 90, 0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.25s ease; /* smooth animation */
+}
+
+.stream-box:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+  background: #ffb31a; /* slightly deeper yellow */
+}
+
+</style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <div class="nav">
+    <div class="brand">ALLSET</div>
+    <div class="nav-links">
+      <div>Home</div><div>About</div><div>Streams</div><div>Contact</div>
+    </div>
+   <a href="faq.html">
+  <div class="cta">FAQ Section</div>
+</a>
+
+  </div>
+
+  <!-- HERO -->
+  <div class="hero-wrap">
+    <section class="hero" aria-label="hero">
+      <!-- LEFT black block (text / buttons / stats) -->
+      <div class="hero-left">
+        <h1>We <span class="accent">help</span> you choose <br> the right stream</h1>
+        <p>ALLSET guides students after class 12th to make clear, practical choices. Explore courses, entrance exams and career paths for Science, Commerce, Arts and Vocational streams.</p>
+
+        <div class="hero-actions">
+          <a href="calender1.html" target="_blank">
+          <button class="btn-primary" onclick="document.querySelector('.streams-section').scrollIntoView({behavior:'smooth'})">Explore exam dates</button></a>
+         <a href="cou.html" target="_blank">
+  <button class="btn-outline">Learn More about Counselling</button>
+</a>
+ <a href="scholarship.html" target="_blank">
+          <button class="btn-primary" onclick="document.querySelector('.streams-section').scrollIntoView({behavior:'smooth'})">Explore about scholarship</button></a>
+
+        </div>
+
+        <div class="stats" role="list">
+          <div class="stat" role="listitem">
+            <div class="num">50+</div>
+            <div class="label">Courses</div>
+          </div>
+          <div class="stat" role="listitem">
+            <div class="num">100+</div>
+            <div class="label">Govt Exams</div>
+          </div>
+          <div class="stat" role="listitem">
+            <div class="num">200+</div>
+            <div class="label">Career Options</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT white image card -->
+      <div class="hero-right">
+        <div class="image-card" aria-hidden="false">
+          <img src="https://img.freepik.com/premium-photo/smiling-children-elementary-school-classroom_917664-41034.jpg" alt="Students brainstorming">
+        </div>
+      </div>
+    </section>
+
+    <!-- black bar under the hero (visual element like the screenshot) -->
+    <div class="hero-bar" aria-hidden="true"></div>
+  </div>
+
+  <!-- STREAMS / four boxes section (left text, right four boxes) -->
+  <section class="streams-section">
+    <div class="streams-text">
+      <h2>Select Your Stream</h2>
+      <p>Choose the path that suits your interests and career goals. Click any box to view courses, exams and career options for that stream.</p>
+    </div>
+
+    <div class="streams-grid" aria-label="streams">
+      <!-- Use your exact data (PCM, Commerce, Arts, Vocational) -->
+      <a class="stream-box" href="pcm.html" >
+        <h3>PCM</h3>
+        <p>Best for engineering, research & technology careers.</p>
+      </a>
+       <a class="stream-box" href="pcb.html" style="background:#ffd580;" >
+        <h3 >PCB</h3>
+        <p>Best for medical, research & technology careers.</p>
+      </a>
+
+      <a class="stream-box" href="commerce.html" >
+        <h3>Commerce</h3>
+        <p>Ideal for business, finance, management, and accounting careers.</p>
+      </a>
+
+      <a class="stream-box" href="arts.html" style="background:#ffd580;">
+        <h3>Arts / Humanities</h3>
+        <p>Perfect for civil services, literature, psychology, design & more.</p>
+      </a>
+
+      <a class="stream-box" href="vocational.html" >
+        <h3>Vocational</h3>
+        <p>Skill-based courses like ITI, diploma, and job-ready programs.</p>
+      </a>
+      
+    </div>
+  </section>
+ <footer>
+  <div class="footer-container">
+    <!-- Contact Info -->
+    <div class="footer-section">
+      <h3>Contact Us</h3>
+      <p>Email: info@allset.com</p>
+      <p>Phone: +91 9876543211</p>
+      <p>Address: 123, Knowledge Street, New Delhi, India</p>
+    </div>
+
+    <!-- Social Media Links -->
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <div class="social-links">
+        <a href="https://www.facebook.com" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com" target="_blank">Instagram</a>
+        <a href="https://www.twitter.com" target="_blank">Twitter</a>
+        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="footer-section">
+      <h3>Disclaimer</h3>
+      <p>All information provided on this website is for educational purposes only. Please verify details from official sources before applying.</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2025 ALLSET. All rights reserved.
+  </div>
+</footer>
+
+<style>
+  footer {
+    background: #111;
+    color: #fff;
+    padding: 40px 20px 20px;
+    font-family: Arial, sans-serif;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px;
+  }
+
+  .footer-section {
+    flex: 1 1 250px;
+  }
+
+  .footer-section h3 {
+    color: #f59e0b;
+    margin-bottom: 10px;
+  }
+
+  .footer-section p, .footer-section a {
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+    margin: 4px 0;
+  }
+
+  .social-links a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #fff;
+    transition: color 0.2s ease;
+  }
+
+  .social-links a:hover {
+    color: #f59e0b;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #aaa;
+  }
+
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
+
+</body>
+</html>

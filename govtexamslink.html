@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALLSET - Government Exams After 12th (Arts)</title>
+  <style>
+    :root {
+      --yellow: #f59e0b;
+      --white: #ffffff;
+     
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--white);
+      background: url("https://www.creativefabrica.com/wp-content/uploads/2023/05/11/Modern-colourful-abstract-background-Graphics-69439498-1.jpg") no-repeat center center/cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.7);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.8);
+      color: var(--yellow);
+      text-align: center;
+      padding: 20px 0;
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+    }
+
+    .category {
+      width: 100%;
+      padding: 20px;
+    }
+
+    .category h2 {
+      font-size: 1.8rem;
+      color: var(--yellow);
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--yellow);
+      padding-bottom: 5px;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .card-link {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .card {
+      border-radius: 10px;
+      width: 200px;
+      height: 200px;
+      padding: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      overflow: hidden;
+      background: rgba(26, 26, 26, 0.9);
+    }
+
+    .card.active { border: 2px solid var(--green); }
+    .card.new { border: 2px solid var(--blue); }
+    .card.lost { border: 2px solid var(--red); }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.8);
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: var(--yellow);
+      text-align: center;
+      min-height: 2.4em;
+    }
+
+    .card p {
+      font-size: 0.85rem;
+      color: #ccc;
+      text-align: center;
+      line-height: 1.3;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .back-link {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .back-link a {
+      text-decoration: none;
+      color: var(--yellow);
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.2s;
+    }
+    .back-link a:hover {
+      color: var(--white);
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <header>ALLSET</header>    
+
+    <div class="category">
+      <h2>Government Exams After 12th (Arts Stream)</h2>
+      <div class="container">
+
+        <!-- Active Exams -->
+        <a href="https://ssc.nic.in" target="_blank" class="card-link">
+          <div class="card active">
+            <h3>SSC CHSL</h3>
+            <p>Clerical & office jobs. Open for 12th pass students.</p>
+          </div>
+        </a>
+
+        <a href="https://www.rrbcdg.gov.in" target="_blank" class="card-link">
+          <div class="card active">
+            <h3>RRB NTPC & Group D</h3>
+            <p>Railway clerical & technical posts. 12th pass eligible.</p>
+          </div>
+        </a>
+
+        <a href="https://www.upsc.gov.in/examinations/NDA" target="_blank" class="card-link">
+          <div class="card active">
+            <h3>NDA (Defence)</h3>
+            <p>Army, Navy, Air Force. 12th pass Arts students can apply.</p>
+          </div>
+        </a>
+
+        <a href="https://www.ctet.nic.in" target="_blank" class="card-link">
+          <div class="card new">
+            <h3>CTET</h3>
+            <p>Teaching jobs in central schools. 12th pass eligible with conditions.</p>
+          </div>
+        </a>
+
+        <a href="https://www.drdo.gov.in" target="_blank" class="card-link">
+          <div class="card new">
+            <h3>DRDO CEPTAM</h3>
+            <p>Technician & MTS posts. 12th pass students can apply.</p>
+          </div>
+        </a>
+
+        <a href="https://cuet.samarth.ac.in" target="_blank" class="card-link">
+          <div class="card new">
+            <h3>CUET</h3>
+            <p>UG courses in central universities. Arts students highly eligible.</p>
+          </div>
+        </a>
+
+        <a href="https://uppsc.up.nic.in" target="_blank" class="card-link">
+          <div class="card active">
+            <h3>State PSC Exams</h3>
+            <p>State-level administrative jobs. Arts students eligible for clerk & officer posts.</p>
+          </div>
+        </a>
+
+        <a href="https://www.ibps.in" target="_blank" class="card-link">
+          <div class="card active">
+            <h3>Bank Clerks (RRB)</h3>
+            <p>Regional Rural Bank clerical posts. 12th pass can apply.</p>
+          </div>
+        </a>
+
+        <a href="https://www.upsc.gov.in" target="_blank" class="card-link">
+          <div class="card active">
+            <h3>UPSC Civil Services</h3>
+            <p>Graduate level exam. IAS, IPS, IFS roles. Arts optional subjects helpful.</p>
+          </div>
+        </a>
+
+        <a href="https://www.sbi.co.in/web/careers" target="_blank" class="card-link">
+          <div class="card lost">
+            <h3>SBI Clerk & PO</h3>
+            <p>Previously for 12th pass. PO now needs graduation. Clerical posts still open for grads.</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <div class="back-link">
+      <a href="arts.html">&larr; Back to select page</a>
+    </div>
+  </div>
+</body>
+</html>

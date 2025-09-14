@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALLSET - Commerce Path</title>
+  <style>
+    :root {
+      --yellow: #f59e0b;
+      --white: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--white);
+      background: url("https://img.freepik.com/premium-vector/colorful-abstract-background_688032-23.jpg?w=740") no-repeat center center/cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Overlay effect for better text visibility */
+    .overlay {
+      background: rgba(0, 0, 0, 0.65);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    header {
+      background: rgba(0, 0, 0, 0.8);
+      color: var(--yellow);
+      text-align: center;
+      padding: 25px 0;
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    /* Intro section */
+    .intro {
+      text-align: center;
+      padding: 60px 30px 30px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .intro h2 {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+      color: var(--yellow);
+    }
+    .intro p {
+      font-size: 1rem;
+      color: #ddd;
+      line-height: 1.6;
+      margin: 6px 0;
+    }
+
+    /* Container */
+    .cards-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px 40px 60px;
+      flex-wrap: wrap;
+    }
+
+    /* Each card */
+    .card {
+      background: rgba(26, 26, 26, 0.9);
+      border-radius: 10px;
+      width: 260px;
+      overflow: hidden;
+      text-decoration: none;
+      color: var(--white);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.8);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-content {
+      padding: 16px;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin: 0 0 10px;
+      color: var(--yellow);
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      margin: 0;
+      color: #ccc;
+    }
+
+    /* Back link */
+    .back-link {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .back-link a {
+      text-decoration: none;
+      color: var(--yellow);
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.2s;
+    }
+    .back-link a:hover {
+      color: var(--white);
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <!-- Header -->
+    <header>ALLSET</header>
+
+    <!-- Intro text like screenshot -->
+    <div class="intro">
+      <h2>Discover Your Journey after 10th</h2>
+      <p>.</p>
+      <p>Explore the best options available just after 10th!! Start early gain more.</p>
+    </div>
+
+    <!-- Horizontal cards -->
+    <div class="cards-container">
+
+      <a href="index.html" class="card">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.RMp9Bv_atLfb3TvFneL_0AHaEJ?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Courses">
+        <div class="card-content">
+          <h3>Courses</h3>
+          <p>Courses after 10th?.</p>
+        </div>
+      </a>
+
+      <a href="index2.html" class="card">
+        <img src="https://static.vecteezy.com/system/resources/previews/034/341/416/large_2x/portrait-of-a-group-of-students-standing-in-a-corridor-at-school-portrait-of-happy-young-students-ai-generated-free-photo.jpg" alt="Govt Exams">
+        <div class="card-content">
+          <h3>Govt Exams</h3>
+          <p>G10.</p>
+        </div>
+      </a>
+
+      
+
+    </div>
+
+    <!-- Back -->
+    <div class="back-link">
+      <a href="selectstream.html">&larr; Back to Stream Page</a>
+    </div>
+  </div>
+</body>
+</html>
